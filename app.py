@@ -319,7 +319,6 @@ def api_dataset_pipeline():
         ds = get_dataset()
         
         if 'image' in request.files and request.files['image'].filename != '':
-            # Handle user upload
             file = request.files['image']
             img = read_uploaded_image(file)
             if img is None: return jsonify({"error": "Failed to read image"}), 400
@@ -329,7 +328,6 @@ def api_dataset_pipeline():
             cv2.imwrite(temp_path, img)
             image_paths = [temp_path]
         else:
-            # Handle dataset batch
             if request.is_json:
                 count = int(request.json.get("count", 5))
             else:
@@ -340,10 +338,8 @@ def api_dataset_pipeline():
             img = cv2.imread(img_path)
             if img is None: continue
             
-            # Original
             orig_url = save_temp_image(img, "orig")
             
-            # Feature Graph (RGB Histogram)
             fig, ax = plt.subplots(figsize=(4, 3))
             colors = ('b', 'g', 'r')
             for i, col in enumerate(colors):
@@ -365,11 +361,9 @@ def api_dataset_pipeline():
             plt.close()
             graph_url = f"/static/uploads/{graph_name}"
 
-            # Enhance
             enhanced, _ = enhance_image(img)
             enh_url = save_temp_image(enhanced, "enh")
             
-            # Detect
             filename = Path(img_path).name
             all_anns = ds.get("all_annotations", {})
             detections = []
@@ -397,7 +391,6 @@ def api_dataset_pipeline():
             
             det_url = save_temp_image(annotated, "det")
             
-            # UVS Score Calculation
             score_data = compare_quality(img, enhanced)
             uvs_score = score_data.get("improvement", 0)
             

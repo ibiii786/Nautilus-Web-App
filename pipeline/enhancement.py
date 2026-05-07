@@ -1,8 +1,4 @@
-"""
-Pelagix — Image Enhancement
-=============================
-Step 4: Image Enhancement techniques for underwater images.
-"""
+
 
 import cv2
 import numpy as np

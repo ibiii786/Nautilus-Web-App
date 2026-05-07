@@ -1,10 +1,3 @@
-"""
-Pelagix — Data Loader
-======================
-Step 1 of the Data Science Pipeline: Data Collection & Loading.
-Auto-detects RUOD dataset format (VOC XML or YOLO TXT) and loads
-images with their annotations into structured DataFrames.
-"""
 
 import os
 import glob
@@ -17,16 +10,6 @@ from pathlib import Path
 
 
 def _find_dataset_dirs(dataset_path):
-    """
-    Auto-detect the internal structure of the RUOD dataset.
-    Returns (images_dir, annotations_dir, format_type).
-    
-    Handles common structures:
-      - images/ + annotations/ (VOC)
-      - images/ + labels/     (YOLO)
-      - train/images + train/labels (YOLO split)
-      - Flat directory with mixed .jpg + .xml or .txt
-    """
     if not os.path.exists(dataset_path):
         return None, None, None
 

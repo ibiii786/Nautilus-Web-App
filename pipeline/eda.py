@@ -1,8 +1,3 @@
-"""
-Nautilus — Exploratory Data Analysis
-=====================================
-Step 3: EDA with deep black and bioluminescent visualizations.
-"""
 import os, numpy as np, pandas as pd
 import matplotlib
 matplotlib.use("Agg")

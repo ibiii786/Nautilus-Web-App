@@ -10,13 +10,13 @@ HOST = "127.0.0.1"
 PORT = 5000
 DEBUG = False
 
-TARGET_SIZE = (640, 640)           # Standard size for YOLO
+TARGET_SIZE = (640, 640)
 MAX_UPLOAD_SIZE_MB = 16
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp', 'tiff', 'webp'}
 
-YOLO_MODEL = "yolov8m-world.pt"     # Upgraded to Medium model for significantly better accuracy
-YOLO_CONFIDENCE = 0.05            # Increased confidence to reduce false positives
-YOLO_IOU = 0.45                   # NMS IoU threshold
+YOLO_MODEL = "yolov8m-world.pt"
+YOLO_CONFIDENCE = 0.05
+YOLO_IOU = 0.45
 
 UVS_WEIGHTS = {
     "brightness": 0.20,

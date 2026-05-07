@@ -1,9 +1,3 @@
-"""
-Pelagix — Quality Score
-========================
-Step 6: Custom Underwater Visibility Score (UVS) — a 0-100 index
-combining brightness, color balance, contrast, and sharpness.
-"""
 
 import cv2
 import numpy as np
@@ -40,15 +34,6 @@ def compute_sharpness_score(image):
 
 
 def compute_uvs(image, weights=None):
-    """
-    Compute the Underwater Visibility Score (UVS) for an image.
-
-    Formula:
-        UVS = w1*Brightness + w2*ColorBalance + w3*Contrast + w4*Sharpness
-
-    Returns:
-        dict with overall score, component scores, and details.
-    """
     if weights is None:
         from config import UVS_WEIGHTS
         weights = UVS_WEIGHTS
