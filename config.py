@@ -14,7 +14,7 @@ TARGET_SIZE = (640, 640)
 MAX_UPLOAD_SIZE_MB = 16
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp', 'tiff', 'webp'}
 
-YOLO_MODEL = "yolov8m-world.pt"
+YOLO_MODEL = "yolov8l-world.pt"
 YOLO_CONFIDENCE = 0.05
 YOLO_IOU = 0.45
 
@@ -49,14 +49,14 @@ RUOD_CLASSES = [
 
 RUOD_DISPLAY_NAMES = {
     "holothurian": "sea cucumber",
-    "echinus": "black sea urchin",
-    "scallop": "scallop shell",
+    "echinus": "sea urchin",
+    "scallop": "scallop",
     "starfish": "starfish",
     "fish": "fish",
-    "corals": "coral reef",
-    "diver": "scuba diver",
+    "corals": "coral",
+    "diver": "diver",
     "cuttlefish": "cuttlefish",
-    "turtle": "sea turtle",
+    "turtle": "turtle",
     "jellyfish": "jellyfish",
-    "rocks": "underwater rock",
+    "rocks": "rock",
 }
