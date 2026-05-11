@@ -1,4 +1,4 @@
-# 🌊 Nautilus — Marine Intelligence Platform
+# Nautilus — Marine Intelligence Platform
 
 A full-stack data science web application for underwater image processing, marine species detection, and EDA.
 
